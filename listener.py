@@ -13,6 +13,7 @@ while True:
         # if we have an image in the current images that appeared since the last check, we open it
         if image not in seenImages:
             openImage(image)
+            print("Opening " + image)
             seenImages.append(image)
     # if the user takes an image out of the folder, we want it to be shown when it appears
     for image in seenImages:
