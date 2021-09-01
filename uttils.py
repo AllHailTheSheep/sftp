@@ -6,28 +6,24 @@ import sys
 
 
 
-def getImagesInFolder(dir, recursive):
+def getImagesInFolder(dir):
     '''Gets list of paths to all images in a folder
 
     @type dir: str
     @param dir: The path to look for images in
-    @type recursive: boolean
-    @param recursive: whether or not to locate images in subfolders as well
     @rtype: list
     @returns: a list of image paths'''
 
-    def getFilesInFolder(dir, recursive):
+    def getFilesInFolder(dir):
         '''Gets list of paths to all files in folder
 
         @type dir: str
         @param dir: The path to look for files in
-        @type recursive: boolean
-        @param recursive: whether or not to locate files in subfolders as well
         @rtype: list
         @returns: a list of file paths'''
 
         currentFiles = []
-        for root, dirs, files in os.walk("./", topdown=True):
+        for root, dirs, files in os.walk(dir, topdown=True):
             for name in files:
                 currentFiles.append(os.path.join(root, name))
             for name in dirs:
@@ -35,7 +31,7 @@ def getImagesInFolder(dir, recursive):
         return currentFiles
 
     # now we get our current files
-    currentFiles = getFilesInFolder(dir, recursive)
+    currentFiles = getFilesInFolder(dir)
     # intialize our list
     images = []
     fileExtensions = ['.jpg', '.jpeg', '.png']
