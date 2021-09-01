@@ -33,18 +33,31 @@ When run, listener.py will ask for a path to the folder to watch. From this poin
 
 ### sftp.py
 IMPORTANT: YOU MUST HAVE ESTABLISHED PREVIOUS SSH CONNECTIONS BOTH WAYS FOR THESE TO WORK
+
 sftp.py contains two functions: `sftp_put()` and `sftp_get()`.
+
 The parameters for `sftp_put()` are as follows:
+
     host: the IP or hostname of the computer to pull a file from.
+
     username: the username on the host to login as.
+
     password: the password of the username to login with. it is suggested to store this in an untracked file, as to not expose any passwords in plaintext onscreen.
+
     local_path: path of the file to push on the local machine.
+
     remote_path: the remote path to pull from.
+
 The parameters for `sftp_get()` are as follows:
+
     host: the IP or hostname of the computer to pull a file from.
+
     username: the username on the host to login as.
+
     password: the password of the username to login with. it is suggested to store this in an untracked file, as to not expose any passwords in plaintext onscreen.
+
     remote_path: the remote path to pull from.
+    
     local_path: path to copy the file to on local machine.
 
 ### uttils.py
